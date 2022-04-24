@@ -7,6 +7,7 @@ class CreateSongs < ActiveRecord::Migration[6.1]
       t.string :genre
       t.integer :year
       t.string :posted_by
+      t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps
     end

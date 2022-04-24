@@ -12,6 +12,7 @@ function Songs(){
     return (
         <div>
             <h1> Song Page </h1>
+            <h2>{console.log(songs)}</h2>
         </div>
     )
 }
