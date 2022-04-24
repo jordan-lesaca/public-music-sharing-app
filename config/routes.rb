@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  resources :favorites
+  resources :songs
+  resources :users
+  resources :profiles
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
