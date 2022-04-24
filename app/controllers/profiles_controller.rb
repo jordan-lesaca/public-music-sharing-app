@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
       end
     
       def create 
-        profile = Profile.create!(profile_params)
+        profile = Profile.create(profile_params)
         render json: profile
       end
     

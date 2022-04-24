@@ -11,7 +11,7 @@ class FavoritesController < ApplicationController
       end
     
       def create
-        favorite = Favorite.create!(favorite_params)
+        favorite = Favorite.create(favorite_params)
         render json: favorite, status: :created
       end
     
