@@ -8,6 +8,11 @@ function App() {
   return (
     <div className="App">
       <h1> Project - Music - Sharing</h1>
+        <nav> 
+          <Link to="/">Home</Link>
+          <br/>
+          <Link to="songs">Song</Link>
+        </nav>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="songs" element={<Songs />}/>
