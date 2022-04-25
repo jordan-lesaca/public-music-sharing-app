@@ -39,7 +39,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="songs" element={<Songs user={user} addSong={addSong} />}/>
-          <Route path="mysongs" element={<MySongs />}/>
+          <Route path="mysongs" element={<MySongs user={user} />}/>
           <Route path="favorites" element={<Favorites />}/>
           <Route path="profile" element={<Profile />}/>
         </Routes>

@@ -1,4 +1,4 @@
-function FavoriteCard({favorite, song }){
+function FavoriteCard({ song }){
   
     if (song.length === 0) return (  
       <div>  
