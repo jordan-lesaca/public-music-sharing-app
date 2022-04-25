@@ -40,8 +40,8 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="songs" element={<Songs user={user} addSong={addSong} />}/>
           <Route path="mysongs" element={<MySongs user={user} />}/>
-          <Route path="favorites" element={<Favorites />}/>
-          <Route path="profile" element={<Profile />}/>
+          <Route path="favorites" element={<Favorites user={user} songs={songs} />}/>
+          <Route path="profile" element={<Profile user={user} />}/>
         </Routes>
     </div>
   );
