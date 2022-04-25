@@ -22,12 +22,16 @@ function App() {
       })
     }, []);   
 
+  function onLogout(){
+    setUser(null)
+  }
+
   if (!user) return <Login setUser={setUser}/>  
 
   return (
     <div className="App">
       <h1> Project - Music - Sharing</h1>
-        <NavBar />
+        <NavBar onLogout={onLogout} />
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="songs" element={<Songs />}/>
