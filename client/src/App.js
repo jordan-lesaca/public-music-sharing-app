@@ -11,6 +11,7 @@ import Profile from './components/Profile'
 
 function App() {
   const [ user, setUser ] = useState(null)
+  const [ songs, setSongs ] = useState([])
 
   useEffect(() => { 
     fetch("/me")
@@ -22,6 +23,10 @@ function App() {
       })
     }, []);   
 
+  function addSong(song){
+    setSongs(song)
+  }
+
   function onLogout(){
     setUser(null)
   }
@@ -30,11 +35,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1> Project - Music - Sharing</h1>
         <NavBar onLogout={onLogout} />
         <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="songs" element={<Songs />}/>
+          <Route path="songs" element={<Songs user={user} addSong={addSong} />}/>
           <Route path="mysongs" element={<MySongs />}/>
           <Route path="favorites" element={<Favorites />}/>
           <Route path="profile" element={<Profile />}/>
