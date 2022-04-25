@@ -4,6 +4,10 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from './components/Home'
 import Login from './components/Login'
 import Songs from './components/Songs'
+import Favorites from './components/Favorites'
+import MySongs from './components/MySongs'
+import NavBar from './components/NavBar'
+import Profile from './components/Profile'
 
 function App() {
   const [ user, setUser ] = useState(null)
@@ -23,18 +27,14 @@ function App() {
   return (
     <div className="App">
       <h1> Project - Music - Sharing</h1>
-
-        <nav> 
-          <Link to="/">Home</Link>
-          <br/>
-          <Link to="songs">Song</Link>
-        </nav>
-
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="songs" element={<Songs />}/>
+          <Route path="mysongs" element={<MySongs />}/>
+          <Route path="favorites" element={<Favorites />}/>
+          <Route path="profile" element={<Profile />}/>
         </Routes>
-
     </div>
   );
 }
