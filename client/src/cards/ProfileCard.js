@@ -1,4 +1,4 @@
-function ProfileCard({user, profile}){
+function ProfileCard({user, profile, editButton, handleEditButton}){
 
     return(
       <div>
@@ -7,6 +7,7 @@ function ProfileCard({user, profile}){
             <p>Name: {profile.name}</p>  
             <p>Favorite Genre: {profile.favorite_genre}</p>  
             <p>Pronouns: {profile.pronouns}</p><p></p>
+            <button onClick={e => handleEditButton(e)}>{editButton}</button>
         </div>
       </div>
     )
