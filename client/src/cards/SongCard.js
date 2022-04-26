@@ -3,7 +3,7 @@ import { useState } from 'react'
 function SongCard({ user, song }){
   const [ errors, setErrors ] = useState([])
   const [ clicked, setClicked ] = useState("")
-  const [ favorites, setFavorites ] = useState([]) 
+  const [ favorites, setFavorites ] = useState([])
 
   function addFavorite(favorite){
     setFavorites(favorite)
