@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import SongCard from '../cards/SongCard'
 import AddForm from '../forms/AddForm'
 
-function Songs({ user, addSong }){
+function Songs({ user, addSong, userFaves }){
   const [ songs, setSongs ] = useState([])
 
   useEffect(() => {
@@ -30,6 +30,7 @@ function Songs({ user, addSong }){
         song={song} 
         user={user}
         addSong={addSong}
+        userFaves={userFaves}
         />)}
       </div>
     </div>
