@@ -11,3 +11,149 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html{
+  background-color: #282c34;
+
+}
+
+div .App {
+  transform: scale(0.97);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.song-card {
+  width: 400px;
+  height: auto;
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+.container {
+  width: 400px;
+  color: white;
+  background: black;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+.page-title{
+  width: 400px;
+  color: white;
+  background: black;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+.form-container {
+  width: 400px;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background: silver;
+}
+
+.form {
+  background: silver;
+  padding: 20px;
+  margin: auto;
+}
+
+.form, label{
+  text-align: right;
+  margin-right: auto;
+}
+
+.question {
+  width: 400px;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background: silver
+}
+
+.NavBar {
+  width: 400px;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background: silver
+}
+
+.errors {
+  color: red;
+}
+
+.title, .form-header {
+  background: black;
+  color: white;
+  margin-block-start: 0em;
+  border-radius: 10px;
+}
+
+.profile-form-header {
+  background: white;
+  color: black;
+  margin-block-start: 0em;
+  border-radius: 10px;
+}
+
+/* Mysong Page */
+.myform-container{
+  margin: auto
+}
+
+.mysong-container{
+  display: flex
+}
+
+.edit-form-container {
+  width: 400px;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background: silver;
+  display: flex 1
+}
+
+.song-card-section {
+  border-top: 10px solid black;
+  border-radius: 5px;
+}
+
+.card-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(auto, auto)
+}
