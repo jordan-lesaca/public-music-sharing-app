@@ -1,7 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react'
 import { Routes, Route } from "react-router-dom";
-import Home from './components/Home'
 import Login from './components/Login'
 import Songs from './components/Songs'
 import Favorites from './components/Favorites'
@@ -37,11 +36,10 @@ function App() {
     <div className="App">
         <NavBar onLogout={onLogout} />
         <Routes>
-          <Route path="/" element={<Home />}/>
+        <Route path="/" element={<Profile user={user} />}/>
           <Route path="songs" element={<Songs user={user} addSong={addSong} />}/>
           <Route path="mysongs" element={<MySongs addSong={addSong} user={user} />}/>
           <Route path="favorites" element={<Favorites user={user} songs={songs} />}/>
-          <Route path="profile" element={<Profile user={user} />}/>
         </Routes>
     </div>
   );
