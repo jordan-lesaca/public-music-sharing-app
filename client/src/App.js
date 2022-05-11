@@ -16,11 +16,11 @@ function App() {
   useEffect(() => { 
     setIsLoading(true)
     fetch("/me")
-    .then((r) => {  
+    .then((r) => { 
+      setIsLoading(false) 
       if (r.ok) { 
         r.json()
     .then((user) => {
-      setIsLoading(false)
       setUser(user)
     }
       )
@@ -36,7 +36,8 @@ function App() {
     setUser(null)
   }
 
-  if (user) {
+  if (!user) { return ( <div> {(isLoading) ?  <h1> Loading.. </h1> : <Login setUser={setUser}/>} </div> )}
+    
 
   return (
     <div className="App">
@@ -48,10 +49,9 @@ function App() {
           <Route path="favorites" element={<Favorites user={user} songs={songs} />}/>
         </Routes>
     </div>
-  )}
-  return <div>{isLoading ? <h1> Loading.. </h1> : 
-  <Login setUser={setUser}/>}
-  </div>
+  ) 
+
+  
 };
 
 export default App;
