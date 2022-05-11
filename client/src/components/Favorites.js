@@ -7,7 +7,8 @@ function Favorites(){
   useEffect(() => {
     fetch(`/favorites`,)
     .then(r => r.json())
-    .then(favorites => setFavorites(favorites))
+    .then(favorites => {
+      setFavorites(favorites)})
   }, [])           
 
   function removeFave(favorite){
@@ -18,7 +19,7 @@ function Favorites(){
   if (favorites.length === 0) 
 
   return (
-    <div className="page-title">  
+    <div className="page-title"> 
       <h3> No favorites yet! </h3>
     </div> )
   else 

@@ -1,6 +1,7 @@
 import SignupForm from '../forms/SignupForm'
 import LoginForm from '../forms/LoginForm'
 import { useState } from 'react'
+import NavBar from '../components/NavBar'
 
 function Login({ setUser }) {
   const [showLogin, setShowLogin] = useState(true)
@@ -9,6 +10,7 @@ function Login({ setUser }) {
     <div>  
       {showLogin ? (
         <>
+          <NavBar />
           <LoginForm setUser={setUser} />
           <p className="form-container">
             Don't have an account? 
@@ -19,6 +21,7 @@ function Login({ setUser }) {
         </>
       ) : (
         <>
+          <NavBar />
           <SignupForm setUser={setUser} />
           <p className="form-container">
             Already have an account? 

@@ -2,8 +2,9 @@ import { useState } from 'react'
 
 function SongCard({ user, song }){
   const [ errors, setErrors ] = useState([])
-  const [ clicked, setClicked ] = useState("")
-  const [ favorites, setFavorites ] = useState([])
+  const [ clicked, setClicked ] = useState("")// eslint-disable-next-line
+  const [ favorites, setFavorites ] = useState([]) 
+  const [isLoading, setIsLoading] = useState(false)
 
   function addFavorite(favorite){
     setFavorites(favorite)
@@ -11,6 +12,7 @@ function SongCard({ user, song }){
 
   function handleSubmit(e){
     e.preventDefault()
+    setIsLoading(true)
     fetch("/favorites", {
       method: "POST",
       headers: {
@@ -20,14 +22,16 @@ function SongCard({ user, song }){
         user_id: user.id,
         song_id: song.id
       }),
-    }).then(r => {
+    }).then(r => {        
       if (r.ok) { 
         r.json().then(favorite => {
+          setIsLoading(false)
           setClicked( "Added to your favorites!")
           addFavorite(favorite)
         })
         } else {
           r.json().then(err => {
+            setIsLoading(false)
             setErrors(err.errors)
             setClicked("")
           })
@@ -36,6 +40,7 @@ function SongCard({ user, song }){
 
   return (
     <div className="song-card">
+            {isLoading && <p>Loading...</p>}
       <h1 className="title">"{song.title}"</h1>
         <p>Artist: {song.artist} {!song.featured_artist ? "" : "ft. " + song.featured_artist } </p>
         <p>Genre: {song.genre} </p>

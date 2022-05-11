@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 function SignupForm({setUser}){
-  const [ username, setUsername ] = useState("")
+  const [username, setUsername ] = useState("")
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errors, setErrors] = useState("")
@@ -28,6 +28,27 @@ function SignupForm({setUser}){
       }
     });
   }
+
+  function handleSubmitGuest(e){
+    e.preventDefault()
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ 
+        username: "Guest", 
+        password: "password" 
+      }), 
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      } else {
+        r.json().then((err) => setErrors(err.errors)) 
+      }
+    });
+  }
+
 
   return(
     <div className="form-container">
@@ -63,6 +84,14 @@ function SignupForm({setUser}){
           <button className="button" type="submit" > Submit </button>
           <br/><br/> <p className="errors">{errors}</p>
         </form>
+
+        <form className="form" onSubmit={handleSubmitGuest}>
+          <label> Guest </label>
+        <button className="button" type="submit"> Guest </button>
+        </form>
+
+        <br/><br/> <p className="errors">{errors}</p>
+
     </div>
     )
   }

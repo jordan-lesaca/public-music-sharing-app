@@ -11,17 +11,23 @@ import Profile from './components/Profile'
 function App() {
   const [ user, setUser ] = useState(null)
   const [ songs, setSongs ] = useState([])
+  const [ isLoading, setIsLoading ] = useState(false)
 
   useEffect(() => { 
+    setIsLoading(true)
     fetch("/me")
     .then((r) => {  
       if (r.ok) { 
-        r.json().then((user) => 
-          setUser(user))
+        r.json()
+    .then((user) => {
+      setIsLoading(false)
+      setUser(user)
+    }
+      )
         }
       })
-    }, []);   
-
+    }, []);
+  
   function addSong(song){
     setSongs(song)
   }
@@ -30,19 +36,22 @@ function App() {
     setUser(null)
   }
 
-  if (!user) return <Login setUser={setUser}/>  
+  if (user) {
 
   return (
     <div className="App">
         <NavBar onLogout={onLogout} />
         <Routes>
-        <Route path="/" element={<Profile user={user} />}/>
+        <Route path="/" element={<Profile user={user}/>}/>
           <Route path="songs" element={<Songs user={user} addSong={addSong} />}/>
           <Route path="mysongs" element={<MySongs addSong={addSong} user={user} />}/>
           <Route path="favorites" element={<Favorites user={user} songs={songs} />}/>
         </Routes>
     </div>
-  );
-}
+  )}
+  return <div>{isLoading ? <h1> Loading.. </h1> : 
+  <Login setUser={setUser}/>}
+  </div>
+};
 
 export default App;

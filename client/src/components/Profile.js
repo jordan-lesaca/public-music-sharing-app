@@ -36,7 +36,7 @@ function Profile({ user }){
 
   return (
     <div>
-      <h1 className="page-title">Profile Page</h1>
+      <h1 className="page-title">Your Profile</h1>
         <ProfileCard user={user} 
         profile={profile} 
         handleEditButton={handleEditButton} 

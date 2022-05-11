@@ -32,8 +32,8 @@ function AddForm({ user, addSong }){
             addSong(song)
           })
         } else {
-            r.json().then(err => 
-            setErrors(err.errors))
+            r.json().then(err =>{ 
+            setErrors(err.errors)})
           }
         })
       }

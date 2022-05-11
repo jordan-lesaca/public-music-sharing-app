@@ -12,6 +12,7 @@ user3 = User.create(username: "Kai", password: "password")
 user4 = User.create(username: "Airwrecka", password: "password")
 user5 = User.create(username: "Miramotown", password: "password")
 user6 = User.create(username: "Kribble", password: "password")
+guest = User.create(username: "Guest", password: "password")
 
 profile1 = Profile.create(name: "Jay", favorite_genre: "Folk", pronouns: "He/Him", user_id: 1)
 profile2 = Profile.create(name: "Tu", favorite_genre: "Pop", pronouns: "He/Him", user_id: 2)
@@ -19,6 +20,7 @@ profile3 = Profile.create(name: "Kai", favorite_genre: "EDM", pronouns: "He/Him 
 profile4 = Profile.create(name: "Erika", favorite_genre: "Indie", pronouns: "She/Her", user_id: 4)
 profile5 = Profile.create(name: "Izzy", favorite_genre: "KPop", pronouns: "They/Them", user_id: 5)
 profile6 = Profile.create(name: "Cid", favorite_genre: "Alternative", pronouns: "He/Him", user_id: 6)
+profileGuest = Profile.create(name: "Guest", favorite_genre: "Unknown", pronouns: "Unknown", user_id: 7)
 
 song1 = Song.create(title: "Fast Car", artist: "Tracy Chapman", featured_artist: "", genre: "Folk", year: 1988, user_id: 1, posted_by: "Chronx")
 song2 = Song.create(title: "Its Ok", artist: "Nightbirde", featured_artist: "", genre: "Pop", year: 2020, user_id: 2, posted_by: "Tutu")

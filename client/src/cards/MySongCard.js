@@ -4,13 +4,18 @@ import {useState} from 'react'
 function MySongCard ({ user, song, removeSong, editSong }){
   const [editForm, setEditForm] = useState(false)
   const [editButton, setEditButton] = useState("Show Edit Form")
+  const [isLoading, setIsLoading] = useState(false)
 
   function handleDelete(e){
     e.preventDefault()
+    setIsLoading(true)
+
     fetch(`/songs/${song.id}`, {
       method: "DELETE"})
-      .then(r => 
+      .then(r => {
+        setIsLoading(false)
       removeSong(song)
+      }
     )
    }
     
@@ -22,6 +27,7 @@ function MySongCard ({ user, song, removeSong, editSong }){
 
   return(
     <div> 
+      {isLoading && <p>Loading...</p>}
       <div className="song-card"> 
         <h1 className="title">"{song.title}"</h1> 
           <p>Artist: {song.artist} {!song.featured_artist ? "" : "ft. " + song.featured_artist}</p>

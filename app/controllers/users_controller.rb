@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       render json: user, status: :created
     end
-  
+    
     private
   
     def user_params

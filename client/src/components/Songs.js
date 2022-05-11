@@ -8,11 +8,12 @@ function Songs({ user, addSong, userFaves }){
   useEffect(() => {
     fetch(`/songs`)
     .then((r) => r.json())
-    .then(songs => setSongs(songs))    
+    .then(songs => {setSongs(songs)
+  })    
     }, [])
 
   return (
-    <div className="App">
+    <div className="App">  
   
       <div className="AddForm"> 
         <AddForm 
