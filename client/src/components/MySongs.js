@@ -30,15 +30,14 @@ function MySongs({ user, addSong}){
     <div className="App">
       <div className="AddForm">
         <AddForm user={user} addSong={addSong}/> 
-      </div>
-      
-    <h1 className="page-title">List of {user.username}'s Songs</h1>  
-    
+      </div>      
+    <h1 className="page-title">List of {user.username}'s Songs</h1>      
       <div className="card-container" > 
         {songs.map(song => 
           <MySongCard key={song.id} user={user} 
           song={song} removeSong={removeSong} 
-          editSong={editSong}/> )}
+          editSong={editSong}/>)
+        }
       </div>
     </div>
   )

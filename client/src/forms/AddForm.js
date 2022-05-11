@@ -25,16 +25,15 @@ function AddForm({ user, addSong }){
         genre, year,
         posted_by: user.username,
         user_id: user.id
-        }),
-      }).then(r => {
-        if (r.ok) { 
-          r.json().then(song => {
-            addSong(song)
-          })
-        } else {
-            r.json().then(err =>{ 
-            setErrors(err.errors)})
-          }
+      }),
+    }).then(r => {
+      if (r.ok) { 
+        r.json().then(song => {
+          addSong(song)
+        })
+      } else {
+        r.json().then(err =>{ 
+          setErrors(err.errors)})}
         })
       }
 

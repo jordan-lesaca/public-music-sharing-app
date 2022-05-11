@@ -13,33 +13,31 @@ function MySongCard ({ user, song, removeSong, editSong }){
     fetch(`/songs/${song.id}`, {
       method: "DELETE"})
       .then(r => {
-        setIsLoading(false)
+      setIsLoading(false)
       removeSong(song)
-      }
-    )
-   }
+      })}
     
   function handleEditButton(){
     setEditForm(!editForm)
-    !editForm ? 
-    setEditButton("Hide Edit Form") : setEditButton("Show Edit Form")
+    !editForm ? setEditButton("Hide Edit Form") : setEditButton("Show Edit Form")
   }
 
   return(
     <div> 
       {isLoading && <p>Loading...</p>}
-      <div className="song-card"> 
+      
+      <div className="song-card">         
         <h1 className="title">"{song.title}"</h1> 
           <p>Artist: {song.artist} {!song.featured_artist ? "" : "ft. " + song.featured_artist}</p>
           <p>Genre: {song.genre}</p>
-          <p>Release Year: {song.year}</p>
+          <p>Release Year: {song.year}</p>      
         <div className="song-card-section">
           <p>Remove Song?
           <button type="submit" onClick={e => handleDelete(e)}>Delete</button></p>
           <p>Edit Song?
           <button onClick={e => handleEditButton()}>{editButton}</button></p>   
-        </div> 
-      </div>
+        </div>       
+      </div>      
       <div>
        {editForm ? 
          <EditForm handleEditButton={handleEditButton} 

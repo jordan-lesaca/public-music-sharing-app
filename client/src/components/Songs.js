@@ -9,21 +9,17 @@ function Songs({ user, addSong, userFaves }){
     fetch(`/songs`)
     .then((r) => r.json())
     .then(songs => {setSongs(songs)
-  })    
-    }, [])
+    })    
+  }, [])
 
   return (
     <div className="App">  
-  
       <div className="AddForm"> 
         <AddForm 
         user={user}
-        addSong={addSong}
-        />
+        addSong={addSong}/>
       </div>  
-
       <h1 className="page-title">List of Songs</h1>  
-
       <div className="card-container">
         {songs.map(song =>
         <SongCard 
@@ -31,11 +27,10 @@ function Songs({ user, addSong, userFaves }){
         song={song} 
         user={user}
         addSong={addSong}
-        userFaves={userFaves}
-        />)}
+        userFaves={userFaves}/>)}
       </div>
     </div>
-    )
+  )
 }
 
 export default Songs

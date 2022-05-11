@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom'
 function NavBar({ onLogout }){
 
   function handleLogout(){
-      fetch("/logout", {
-          method: "DELETE", 
+    fetch("/logout", {
+    method: "DELETE", 
       })
-      .then(() => onLogout())
+    .then(() => onLogout())
   }
 
   return(

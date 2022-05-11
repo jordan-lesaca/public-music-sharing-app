@@ -29,18 +29,18 @@ function SongCard({ user, song }){
           setClicked( "Added to your favorites!")
           addFavorite(favorite)
         })
-        } else {
+      } else {
           r.json().then(err => {
-            setIsLoading(false)
-            setErrors(err.errors)
-            setClicked("")
+          setIsLoading(false)
+          setErrors(err.errors)
+          setClicked("")
           })
         }})
       }
 
   return (
     <div className="song-card">
-            {isLoading && <p>Loading...</p>}
+      {isLoading && <p>Loading...</p>}
       <h1 className="title">"{song.title}"</h1>
         <p>Artist: {song.artist} {!song.featured_artist ? "" : "ft. " + song.featured_artist } </p>
         <p>Genre: {song.genre} </p>

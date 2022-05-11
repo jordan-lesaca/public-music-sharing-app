@@ -22,7 +22,7 @@ function Profile({ user }){
     if (profile.id === p.id){
       return profile
       }
-        setProfile(p)
+      setProfile(p)
     }
 
   useEffect(() => {

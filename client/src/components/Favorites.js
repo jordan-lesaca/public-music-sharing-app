@@ -13,7 +13,7 @@ function Favorites(){
 
   function removeFave(favorite){
     setFavorites((favorites)=> 
-    favorites.filter(f => f.id !== favorite.id))
+      favorites.filter(f => f.id !== favorite.id))
   }
 
   if (favorites.length === 0) 
@@ -22,7 +22,6 @@ function Favorites(){
     <div className="page-title"> 
       <h3> No favorites yet! </h3>
     </div> )
-  else 
 
   return (
     <div className="App">

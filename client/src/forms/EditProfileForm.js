@@ -15,7 +15,7 @@ function EditProfileForm({ user, profile, handleEditButton, editProfile }){
       headers: {
         "Content-Type": "application/json",
       },
-        body: JSON.stringify({
+      body: JSON.stringify({
           name, favorite_genre,
           pronouns,
           user_id: user.id
@@ -23,10 +23,10 @@ function EditProfileForm({ user, profile, handleEditButton, editProfile }){
       })
         .then(r => r.json())
         .then(p =>  { 
-        handleEditButton() 
-        editProfile(p)
-    })
-  }
+          handleEditButton() 
+          editProfile(p)
+      })
+    }
 
   return(
     <div className="form-container">

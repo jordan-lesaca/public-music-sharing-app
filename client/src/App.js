@@ -22,10 +22,9 @@ function App() {
         r.json()
     .then((user) => {
       setUser(user)
-    }
-      )
-        }
-      })
+        })
+      }
+    })
     }, []);
   
   function addSong(song){
@@ -36,22 +35,19 @@ function App() {
     setUser(null)
   }
 
-  if (!user) { return ( <div> {(isLoading) ?  <h1> Loading.. </h1> : <Login setUser={setUser}/>} </div> )}
+  if (!user) { return  <div> {isLoading ?  <h1> Loading.. </h1> : <Login setUser={setUser}/>} </div> }
     
-
   return (
     <div className="App">
-        <NavBar onLogout={onLogout} />
-        <Routes>
+      <NavBar onLogout={onLogout} />
+      <Routes>
         <Route path="/" element={<Profile user={user}/>}/>
-          <Route path="songs" element={<Songs user={user} addSong={addSong} />}/>
-          <Route path="mysongs" element={<MySongs addSong={addSong} user={user} />}/>
-          <Route path="favorites" element={<Favorites user={user} songs={songs} />}/>
-        </Routes>
+        <Route path="songs" element={<Songs user={user} addSong={addSong} />}/>
+        <Route path="mysongs" element={<MySongs addSong={addSong} user={user} />}/>
+        <Route path="favorites" element={<Favorites user={user} songs={songs} />}/>
+      </Routes>
     </div>
-  ) 
-
-  
+  )  
 };
 
 export default App;
